@@ -13,7 +13,7 @@ import { notFound } from "next/navigation"
 import { cache } from "react"
 import UserPosts from "./UserPosts"
 import Linkify from "@/components/Linkify"
-import EditProfileButton from "./EditprofileButton"
+import EditProfileButton from "./EditProfileButton"
 
 interface PageProps {
     params: { username: string }

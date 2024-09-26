@@ -3,7 +3,7 @@ import loginImage from "@/assets/login-image.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import LoginForm from "./LoginForm";
-import GoogleSignInButton from "./GoogleSigninButton";
+import GoogleSignInButton from "./GoogleSignInButton";
 
 export const metadata: Metadata = {
     title: "Login"
