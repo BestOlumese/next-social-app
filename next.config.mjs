@@ -1,13 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     experimental: {
-        staleTimes:  {
+        staleTimes: {
             dynamic: 30,
         },
     },
     webpack: (config, { isServer }) => {
         if (isServer) {
-          config.externals.push('@node-rs/argon2'); // Exclude it from the server bundle
+            config.externals.push("@node-rs/argon2"); // Exclude it from the server bundle
         }
         return config;
     },
@@ -18,8 +18,16 @@ const nextConfig = {
                 hostname: "utfs.io",
                 pathname: `/a/${process.env.NEXT_PUBLIC_UPLOADTHING_APP_ID}/*`,
             },
-        ]
-    }
+        ],
+    },
+    rewrites: () => {
+        return [
+            {
+                source: "/hashtag/:tag",
+                destination: "/search?q=%23:tag",
+            },
+        ];
+    },
 };
 
 export default nextConfig;
